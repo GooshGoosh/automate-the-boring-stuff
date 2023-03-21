@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-def displayInventory(inventory):
+def display_inventory(inventory):
     print("\nInventory:")
     itemTotal = 0
     for k, v in inventory.items():
@@ -9,7 +9,7 @@ def displayInventory(inventory):
     print("\nTotal number of items: {}".format(itemTotal))
 
 
-def addToInventory(inventory, addedItems):
+def add_to_inventory(inventory, addedItems):
     print('\nUpdating inventory...')
     for item in addedItems:
         if item in inventory.keys():
@@ -24,10 +24,10 @@ def main():
     stuff = {'Rope': 1, 'Torch': 6, 'Gold Coin': 42, 'Dagger': 1, 'Arrow': 12}
     dragonLoot = ['Gold Coin', 'Dagger', 'Gold Coin', 'Ruby']
 
-    displayInventory(stuff)
+    display_inventory(stuff)
     
-    stuff = addToInventory(stuff, dragonLoot)
-    displayInventory(stuff)
+    stuff = add_to_inventory(stuff, dragonLoot)
+    display_inventory(stuff)
 
 
 if __name__ == "__main__":
