@@ -7,7 +7,7 @@ import random
 
 def main():
     numberOfStreaks = 0
-    numberOfExperiments = 10000
+    numberOfExperiments = 15000
 
     print("\nProcessing {} experiment(s) of 100 coin flips...".format(numberOfExperiments))
     for experimentNumber in range(numberOfExperiments):
@@ -19,10 +19,8 @@ def main():
             else:
                 numOfFlips.append("T")
 
-        for i in range(len(numOfFlips)):
-            if i == 0:
-                continue
-            elif numOfFlips[i] == numOfFlips[i - 1]:
+        for i in range(len(numOfFlips) - 1):
+            if numOfFlips[i] == numOfFlips[i + 1]:
                 streakCounter += 1
                 if streakCounter == 6:
                     numberOfStreaks += 1
@@ -30,7 +28,8 @@ def main():
             else:
                 streakCounter = 0
     
-    print("Chance of streak: {}%".format((numberOfStreaks / 100)))
+    print("Chance of streak: {}%".format((numberOfStreaks / (numberOfExperiments / 100))))
+    print("Number of streaks: {}".format(numberOfStreaks))
 
 
 if __name__ == "__main__":
