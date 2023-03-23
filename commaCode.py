@@ -6,14 +6,14 @@
 
 
 def comma(list):
-    if len(list) == 0:
+    if len(list) == 0:                  # if the given list is empty, then return a message.
         return "This list is empty!"
-    elif len(list) == 1:
+    elif len(list) == 1:                # If the list only contains 1 element, then return that element.
         return list[0]
     else:
-        newList = [str(item) for item in list]
-        newList[-1] = "and " + newList[-1]
-        return ", ".join(newList)
+        newList = [str(item) for item in list]      # Create a new list and convert each element of the old list
+        newList[-1] = "and " + newList[-1]          # into type string while adding "and" to the final element.
+        return ", ".join(newList)       # Return the newly created list with each element separated by a ", ".
 
 
 def main():

@@ -6,13 +6,14 @@ import random
 import pyinputplus as pyip
 
 def main():
+    # Obtain a random number between 1-20 (inclusive).
     secretNumber = random.randint(1, 20)
     print('\nI am thinking of a number between 1 and 20.')
 
     # Ask the player to guess 6 times.
     for guessesTaken in range(1, 7):
         print('Take a guess.')
-        guess = pyip.inputNum(min=1, max=20)
+        guess = pyip.inputNum(min=1, max=20)        # Obtain an integer from the user.
 
         if guess < secretNumber:
             print('Your guess is too low.')
