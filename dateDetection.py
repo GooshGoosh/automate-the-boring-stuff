@@ -32,7 +32,7 @@ def detect_dates(clipboardText):
     return matches 
 
 
-def checkDates(dates):
+def check_dates(dates):
     # Code to check if the found dates are valid or invalid.
     validDates = []     # A list to hold all valid dates found.
     invalidDates = []   # A list to hold all invalid dates found.
@@ -68,7 +68,7 @@ def checkDates(dates):
 
         # Check if the date is the extra day for the Leap Year.
         if month == '02' and day == '29':
-            if checkLeapYear(year):
+            if check_leap_year(year):
                 validDates.append('/'.join(date) + ' (Leap Year)')
                 continue
             else:
@@ -77,7 +77,7 @@ def checkDates(dates):
 
         # Check if the month date is a valid month.
         if month not in months:
-            if checkLeapYear(year):
+            if check_leap_year(year):
                 invalidDates.append('/'.join(date) + ' (Leap Year)')
                 continue
             else:
@@ -86,7 +86,7 @@ def checkDates(dates):
 
         # Check if the day date is a valid day in the given month.
         if day not in months[month]:
-            if checkLeapYear(year):
+            if check_leap_year(year):
                 invalidDates.append('/'.join(date) + ' (Leap Year)')
                 continue
             else:
@@ -95,7 +95,7 @@ def checkDates(dates):
 
         # Check if the date year is valid and if it is a Leap Year.
         if year > 999 and year < 3000:
-            if checkLeapYear(year):
+            if check_leap_year(year):
                 validDates.append('/'.join(date) + ' (Leap Year)')
             else:
                 validDates.append('/'.join(date))
@@ -105,7 +105,7 @@ def checkDates(dates):
     return validDates, invalidDates
 
 
-def checkLeapYear(year):
+def check_leap_year(year):
     if year % 4 != 0:
         return False
 
@@ -118,7 +118,7 @@ def checkLeapYear(year):
 def main():
     text = str(pyperclip.paste())
     dateList = detect_dates(text)
-    valid, invalid = checkDates(dateList)
+    valid, invalid = check_dates(dateList)
 
     print('\nFormat: DD/MM/YYYY')
     print('\nValid Dates:\n')
