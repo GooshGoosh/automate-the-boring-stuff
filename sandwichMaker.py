@@ -14,27 +14,32 @@ import sys
 
 
 def main():
-    breadOptions = ['Wheat', 'White', 'Sourdough']             # Bread options.
-    proteinOptions = ['Chicken', 'Turkey', 'Ham', 'Tofu']      # Protein options.
-    cheeseOptions = ['Cheddar', 'Swiss', 'Mozzarella']         # Cheese options.
-    extraOptions = ['Mayo', 'Mustard', 'Lettuce', 'Tomato']    # Condiments, etc.
+    breadOptions = {'Wheat':0.50, 'White':0.50, 'Sourdough':1.00}                   # Bread options.
+    proteinOptions = {'Chicken':2.00, 'Turkey':2.00, 'Ham':2.00, 'Tofu':1.50}       # Protein options.
+    cheeseOptions = {'Cheddar':0.50, 'Swiss':0.75, 'Mozzarella':0.50}               # Cheese options.
+    extraOptions = ['Mayo', 'Mustard', 'Lettuce', 'Tomato']                         # Condiments, etc.
+    cost = 0
 
     answer = pyip.inputYesNo(prompt='\nHello, would like you place an order?\n')
 
     # Exit the program if the user does not want to place an order.
     if answer == 'no':
         print('\nHave a nice day!')
+        sys.exit(0)
     else:
-        bread = pyip.inputMenu(breadOptions, prompt='\nWhat bread would you like?\n',
+        bread = pyip.inputMenu(list(breadOptions.keys()), prompt='\nWhat bread would you like?\n',
                                numbered=True)
+        cost = cost + breadOptions[bread]
 
-        protein = pyip.inputMenu(proteinOptions, prompt='\nWhat protein would you like?\n',
+        protein = pyip.inputMenu(list(proteinOptions.keys()), prompt='\nWhat protein would you like?\n',
                                  numbered=True)
+        cost = cost + proteinOptions[protein]
 
         answer = pyip.inputYesNo(prompt='\nWould you like cheese?\n')
         if answer == 'yes':
-            cheese = pyip.inputMenu(cheeseOptions, prompt='\nWhat cheese would you like?\n',
+            cheese = pyip.inputMenu(list(cheeseOptions.keys()), prompt='\nWhat cheese would you like?\n',
                                     numbered=True)
+            cost = cost + cheeseOptions[cheese]
         else:
             cheese = 'None'
 
@@ -43,10 +48,10 @@ def main():
         if answer == 'yes':
             while answer == 'yes':
                 if extras == '':
-                    extras = pyip.inputMenu(extraOptions, prompt='\nWhat would you like to add?\n',
+                    extras = pyip.inputMenu(list(extraOptions), prompt='\nWhat would you like to add?\n',
                                              numbered=True)
                 else:
-                    extras = extras + ', ' + pyip.inputMenu(extraOptions, prompt='\nWhat would you like to add?\n',
+                    extras = extras + ', ' + pyip.inputMenu(list(extraOptions), prompt='\nWhat would you like to add?\n',
                                                    numbered=True)
                 answer = pyip.inputYesNo(prompt='\nWould you like to add more?\n')
 
@@ -55,12 +60,13 @@ def main():
         print('\nProcessing order...')
         time.sleep(2)
 
-        print('Your sandwich:')
+        print('\nYour sandwich:')
         print('Bread: {}'.format(bread))
         print('Protein: {}'.format(protein))
         print('Cheese: {}'.format(cheese))
         print('Extras: {}'.format(extras))
         print('\nNumber of sandwiches: {}'.format(sandwichCount))
+        print('Total = ${:.2f}'.format(cost * sandwichCount))
         print('\nThank you! Come again!\n')
     
 
