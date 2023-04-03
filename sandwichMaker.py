@@ -55,7 +55,7 @@ def main():
                                                    numbered=True)
                 answer = pyip.inputYesNo(prompt='\nWould you like to add more?\n')
 
-        sandwichCount = pyip.inputNum(prompt='\nHow many sandwiches would you like to order?\n')
+        sandwichCount = pyip.inputNum(prompt='\nHow many sandwiches would you like to order?\n', min=1)
 
         print('\nProcessing order...')
         time.sleep(2)
