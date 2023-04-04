@@ -4,6 +4,8 @@
 # Usage: mcb.pyw save <keyword> - Saves clipboard to keyword.
 #        mcb.pyw <keyword> - Loads keyword to clipboard.
 #        mcb.pyw list - Loads all keywords to clipboard.
+#        mcb.pyw delete <keyword> - Deletes keyword.
+#        mcb.pyw delete - Deletes all keywords.
 
 
 import shelve
@@ -17,6 +19,9 @@ def main():
     # Save clipboard content.
     if len(sys.argv) == 3 and sys.argv[1].lower() =='save':
         mcbShelf[sys.argv[2]] = pyperclip.paste()
+    # Delete keyword from shelf file.
+    elif len(sys.argv) == 3 and sys.argv[1].lower() == 'delete':
+        del mcbShelf[sys.argv[2]]
     elif len(sys.argv) == 2:
         # List keywords and load content.
         if sys.argv[1].lower() == 'list':
@@ -27,7 +32,8 @@ def main():
         print('\nUsage:\n\
               mcb.pyw save <keyword> - Saves clipboard to keyword.\n\
               mcb.pyw <keyword> - Loads keyword to clipboard.\n\
-              mcb.pyw list - Loads all keywords to clipboard.\n')
+              mcb.pyw list - Loads all keywords to clipboard.\n\
+              mcb.pyw delete <keyword> - Deletes keyword.\n')
 
     mcbShelf.close()
 
