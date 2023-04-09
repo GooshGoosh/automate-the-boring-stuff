@@ -32,7 +32,7 @@ def main():
     # would like to create it.
     if not os.path.isdir(copyDestination):
         print('\nCopy destination "{}" does not exist.'.format(copyDestination))
-        answer = pyip.inputYesNo(prompt='Would you like to create it? (Y/N)')
+        answer = pyip.inputYesNo(prompt='Would you like to create it? (Y/N): ')
         if answer == 'no':
             print('Exiting program...')
             sys.exit(0)
@@ -40,4 +40,18 @@ def main():
             print('Creating copy destination {}...'.format(copyDestination))
             os.mkdir(copyDestination)
 
-    for foldername, subfolders, filename
+    for foldername, subfolders, filenames in os.walk(searchDestination):
+        print('\nSearching for files with a "{}" extension in {}...\n'.format(extension, foldername))
+        for filename in filenames:
+            if filename.endswith(extension):
+                oldFilePath = os.path.join(foldername, filename)
+                newFilePath = os.path.join(copyDestination, filename)
+                print('Copying {} from {} to {}'.format(filename, oldFilePath, newFilePath))
+                shutil.copy(oldFilePath, newFilePath)
+            else:
+                continue
+
+
+if __name__ == "__main__":
+    main()
+
