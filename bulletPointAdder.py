@@ -6,9 +6,7 @@
 import pyperclip
 
 
-def main():
-    text = pyperclip.paste()
-
+def add_bullet_point(text):
     # Separate lines and add stars.
     lines = text.split('\n')
     for i in range(len(lines)):     # Loop through all indexes in the "lines" list.
@@ -18,6 +16,12 @@ def main():
     pyperclip.copy(text)
 
     print('\nBullet points added!')
+
+
+
+def main():
+    clipText = pyperclip.paste()
+    add_bullet_point(clipText)
 
 
 if __name__ == "__main__":

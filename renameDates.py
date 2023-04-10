@@ -9,7 +9,7 @@ import os
 import re
 
 
-def main():
+def rename_dates():
     # Create a regex that matches files with the American date format.
     datePattern = re.compile(r"""^(.*?)     # All text before the date
         ((0|1)?\d)-                         # One or two digits for the month
@@ -44,6 +44,10 @@ def main():
         # Rename the files.
         print(f'\nRenaming "{amerFilename}" to "{euroFilename}"...')
         # shutil.move(amerFilename, euroFilename)   # Uncomment after testing.
+
+
+def main():
+    rename_dates()
 
 
 if __name__ == "__main__":

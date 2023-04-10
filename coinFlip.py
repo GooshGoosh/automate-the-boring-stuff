@@ -5,9 +5,9 @@
 
 import random
 
-def main():
+
+def coin_flip(numberOfExperiments):
     numberOfStreaks = 0             # Variable to track the number of streaks of 6.
-    numberOfExperiments = 15000     # Variable to represent the number of experiments to run.
 
     print("\nProcessing {} experiment(s) of 100 coin flips...".format(numberOfExperiments))
     
@@ -32,6 +32,11 @@ def main():
     
     print("Chance of streak: {}%".format((numberOfStreaks / (numberOfExperiments / 100))))
     print("Number of streaks: {}".format(numberOfStreaks))
+
+
+def main():
+    experiments = 15000     # Variable to represent the number of experiments to run.
+    coin_flip(experiments)
 
 
 if __name__ == "__main__":

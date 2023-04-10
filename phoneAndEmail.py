@@ -6,7 +6,7 @@ import pyperclip
 import re
 
 
-def main():
+def find_phone_and_email(text):
     phoneRegex = re.compile(r'''(
         (\d{3}|\(\d{3}\))?              # Area code
         (\s|-|\.)?                      # Separator
@@ -25,8 +25,6 @@ def main():
         )''', re.VERBOSE)
 
     # Find matches in clipboard text:
-    text = str(pyperclip.paste())
-
     matches = []
     for groups in phoneRegex.findall(text):
         phoneNum = '-'.join([groups[1], groups[3], groups[5]])
@@ -44,6 +42,13 @@ def main():
         print('\n'.join(matches))
     else:
         print('No phone numbers or email addresses found.')
+
+
+def main():
+    # Grab text from clipboard.
+    clipText = str(pyperclip.paste())
+    
+    find_phone_and_email(clipText)
 
 
 if __name__ == "__main__":

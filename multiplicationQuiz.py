@@ -8,8 +8,7 @@ import random
 import time
 
 
-def main():
-    numberOfQuestions = 10
+def quiz(numberOfQuestions):
     correctAnswers = 0
 
     for questionNumber in range(numberOfQuestions):
@@ -37,6 +36,10 @@ def main():
         time.sleep(1)   # Brief pause to let user see the result.
 
     print('Score: {} / {}'.format(correctAnswers, numberOfQuestions))
+
+
+def main():
+    quiz(10)
 
 
 if __name__ == "__main__":

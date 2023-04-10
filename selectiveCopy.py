@@ -13,6 +13,19 @@ import shutil
 import pyinputplus as pyip
 
 
+def copy_directory(extension, searchDestination, copyDestination):
+    for foldername, subfolders, filenames in os.walk(searchDestination):
+        print('\nSearching for files with a "{}" extension in {}...\n'.format(extension, foldername))
+        for filename in filenames:
+            if filename.endswith(extension):
+                oldFilePath = os.path.join(foldername, filename)
+                newFilePath = os.path.join(copyDestination, filename)
+                print('Copying {} from {} to {}'.format(filename, oldFilePath, newFilePath))
+                shutil.copy(oldFilePath, newFilePath)
+            else:
+                continue
+
+
 def main():
     # Ensure there are three command-line arguments given
     if len(sys.argv) != 4:
@@ -40,16 +53,7 @@ def main():
             print('Creating copy destination {}...'.format(copyDestination))
             os.mkdir(copyDestination)
 
-    for foldername, subfolders, filenames in os.walk(searchDestination):
-        print('\nSearching for files with a "{}" extension in {}...\n'.format(extension, foldername))
-        for filename in filenames:
-            if filename.endswith(extension):
-                oldFilePath = os.path.join(foldername, filename)
-                newFilePath = os.path.join(copyDestination, filename)
-                print('Copying {} from {} to {}'.format(filename, oldFilePath, newFilePath))
-                shutil.copy(oldFilePath, newFilePath)
-            else:
-                continue
+    copy_directory(extension, searchDestination, copyDestination)
 
 
 if __name__ == "__main__":

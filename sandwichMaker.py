@@ -13,7 +13,7 @@ import time
 import sys
 
 
-def main():
+def sandwich_menu():
     breadOptions = {'Wheat':0.50, 'White':0.50, 'Sourdough':1.00}                   # Bread options.
     proteinOptions = {'Chicken':2.00, 'Turkey':2.00, 'Ham':2.00, 'Tofu':1.50}       # Protein options.
     cheeseOptions = {'Cheddar':0.50, 'Swiss':0.75, 'Mozzarella':0.50}               # Cheese options.
@@ -69,6 +69,9 @@ def main():
         print('Total = ${:.2f}'.format(cost * sandwichCount))
         print('\nThank you! Come again!\n')
     
+
+def main():
+    sandwich_menu()
 
 
 if __name__ == "__main__":

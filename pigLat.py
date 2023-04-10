@@ -4,16 +4,12 @@
 # the message into Pig Latin.
 
 
-def main():
-    # Get input from the user.
-    print('\nEnter the English message to translate into Pig Latin: ')
-    message = input()
-
+def pig_latin(text):
     vowels = ('a', 'e', 'i', 'o', 'u', 'y')
 
     pigLatin = []   # A list of the words in Pig Latin.
 
-    for word in message.split():
+    for word in text.split():
         # Separate the non-letters at the start of the word:
         prefixNonLetters = ''
         while len(word) > 0 and not word[0].isalpha():
@@ -60,6 +56,14 @@ def main():
     # Join all the words back together into a single string:
     print('\nTranslation: ',end='')
     print(' '.join(pigLatin))
+
+
+def main():
+    # Get input from the user.
+    print('\nEnter the English message to translate into Pig Latin: ')
+    message = input()
+
+    pig_latin(message)
 
 
 if __name__ == "__main__":

@@ -5,7 +5,8 @@
 import random
 import pyinputplus as pyip
 
-def main():
+
+def guess_number():
     # Obtain a random number between 1-20 (inclusive).
     secretNumber = random.randint(1, 20)
     print('\nI am thinking of a number between 1 and 20.')
@@ -26,6 +27,12 @@ def main():
         print('Good job! You guessed my number in {} guesses!'.format(guessesTaken))
     else:
         print('Nope. The number I was thinking of was {}'.format(secretNumber))
+
+
+
+
+def main():
+    guess_number()
 
 
 if __name__ == "__main__":

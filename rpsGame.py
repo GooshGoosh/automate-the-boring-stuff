@@ -3,7 +3,8 @@
 import random
 import sys
 
-def main():
+
+def rps():
     # These variables keep track of the number of wins, losses, and ties.
     wins = 0
     losses = 0
@@ -63,6 +64,10 @@ def main():
         elif playerMove == 's' and computerMove == 'r':
             print('You lose!')
             losses = losses + 1
+
+
+def main():
+    rps()
 
 
 if __name__ == "__main__":
