@@ -12,11 +12,11 @@ import re
 def rename_dates():
     # Create a regex that matches files with the American date format.
     datePattern = re.compile(r"""^(.*?)     # All text before the date
-        ((0|1)?\d)-                         # One or two digits for the month
-        ((0|1|2|3)?\d)-                     # One or two digits for the day
-        ((19|20)\d\d)                       # Four digits for the year
-        (.*?)$                              # All text after the date
-        """, re.VERBOSE)
+                             ((0|1)?\d)-                         # One or two digits for the month
+                             ((0|1|2|3)?\d)-                     # One or two digits for the day
+                             ((19|20)\d\d)                       # Four digits for the year
+                             (.*?)$                              # All text after the date
+                             """, re.VERBOSE)
 
     # Loop over the files in the working directory.
     for amerFilename in os.listdir('.'):

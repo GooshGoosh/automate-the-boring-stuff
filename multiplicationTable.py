@@ -43,7 +43,7 @@ def main():
     if len(sys.argv) != 2:
         print('\nUsage: multiplicationTable.py <integer>')
         sys.exit(1)
-    
+
     try:
         number = int(sys.argv[1])
         create_table(number)

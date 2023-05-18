@@ -12,7 +12,7 @@ def rps():
 
     while True:     # The main game loop.
         print('\n{} Wins, {} Losses, {} Ties'.format(wins, losses, ties))
-        
+
         while True:     # The player input loop.
             print('\nEnter your move: (r)ock (p)aper (s)cissors or (q)uit')
             playerMove = input()

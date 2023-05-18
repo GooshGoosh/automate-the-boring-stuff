@@ -10,7 +10,7 @@ def coin_flip(numberOfExperiments):
     numberOfStreaks = 0             # Variable to track the number of streaks of 6.
 
     print("\nProcessing {} experiment(s) of 100 coin flips...".format(numberOfExperiments))
-    
+
     # Loop to perform the number of experiemnts stated in the numberOfExperiments variable.
     for experimentNumber in range(numberOfExperiments):
         numOfFlips = []
@@ -29,7 +29,7 @@ def coin_flip(numberOfExperiments):
                     break
             else:
                 streakCounter = 0       # Reset the streak counter if the streak is broken.
-    
+
     print("Chance of streak: {}%".format((numberOfStreaks / (numberOfExperiments / 100))))
     print("Number of streaks: {}".format(numberOfStreaks))
 

@@ -47,7 +47,7 @@ def find_phone_and_email(text):
 def main():
     # Grab text from clipboard.
     clipText = str(pyperclip.paste())
-    
+
     find_phone_and_email(clipText)
 
 

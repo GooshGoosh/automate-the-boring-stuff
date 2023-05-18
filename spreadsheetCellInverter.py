@@ -54,7 +54,7 @@ def read_spreadsheet(spreadsheetFile):
 def invert_spreadsheet(dictData, spreadsheetPath):
     parentPath = Path(spreadsheetPath).parent   # Set the parent path.
     filename = str(Path(spreadsheetPath).stem)  # Get the basename of the spreadsheet.
-    
+
     print('Inverting spreadsheet...')
     wb = openpyxl.Workbook()    # Create a new workbook.
     sheet = wb.worksheets[0]    # Load the first worksheet in the workbook.

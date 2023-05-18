@@ -17,7 +17,7 @@ def pig_latin(text):
             word = word[1:]
 
         if len(word) == 0:
-               pigLatin.append(prefixNonLetters)
+            pigLatin.append(prefixNonLetters)
                continue
 
         # Separate the non-letters at the end of this word:

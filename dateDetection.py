@@ -41,11 +41,11 @@ def check_dates(dates):
     twentyEightDays = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10',
                        '11', '12', '13', '14', '15', '16', '17', '18', '19', '20',
                        '21', '22', '23', '24', '25', '26', '27', '28']
-    
+
     # Valid days for April, June, September, November.
     thirtyDays = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10',
-                 '11', '12', '13', '14', '15', '16', '17', '18', '19', '20',
-                 '21', '22', '23', '24', '25', '26', '27', '28', '29', '30']
+                  '11', '12', '13', '14', '15', '16', '17', '18', '19', '20',
+                  '21', '22', '23', '24', '25', '26', '27', '28', '29', '30']
 
     # Valid days for January, March, May, July, August, October, December.
     thirtyOneDays = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10',
@@ -58,8 +58,8 @@ def check_dates(dates):
               '07':thirtyOneDays, '08':thirtyOneDays, '09':thirtyDays,
               '10':thirtyOneDays, '11':thirtyDays, '12':thirtyOneDays}
 
-    
-    
+
+
     # Loop through the dates found with the regex.
     for date in dates:
         day = date[0]
@@ -128,7 +128,7 @@ def main():
     print('\nInvalid Dates:\n')
     for date in invalid:
         print(date)
-    
+
 
 if __name__ == "__main__":
     main()

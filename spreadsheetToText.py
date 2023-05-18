@@ -33,7 +33,7 @@ def read_spreadsheet(spreadsheetFile):
     print('\nLoading workbook...')
     wb = openpyxl.load_workbook(spreadsheet)
     sheet = wb.worksheets[0]    # Load the first worksheet in the workbook.
-    
+
     print('Reading workbook...')
     spreadsheetData = {}    # Dictionary for spreadsheet data.
     # Loop through each column in the spreadsheet.
@@ -73,7 +73,7 @@ def main():
 
     spreadsheet = sys.argv[1]
     spreadsheetData = read_spreadsheet(spreadsheet)
-    
+
     write_text_files(spreadsheetData, spreadsheet)
 
 if __name__ == "__main__":

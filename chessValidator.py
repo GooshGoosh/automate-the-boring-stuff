@@ -33,7 +33,7 @@ def is_valid_chess_board(dict):
             continue
         else:
             return False
-    
+
     # Count if there are more than 32 pieces on the board.
     pieceList= []
     for piece in dict.values():
@@ -60,58 +60,58 @@ def is_valid_chess_board(dict):
 
 def main():
     validTestBoard = {'1a':'wrook', '2a':'wknight', '3a':'wbishop', '4a':'wqueen', '5a':'wking', '6a':'wbishop', '7a':'wknight', '8a':'wrook',
-                       '1b':'wpawn', '2b':'wpawn', '3b':'wpawn', '4b':'wpawn', '5b':'wpawn', '6b':'wpawn', '7b':'wpawn', '8b':'wpawn',
-                       '1c':'', '2c':'', '3c':'', '4c':'', '5c':'', '6c':'', '7c':'', '8c':'',
-                       '1d':'', '2d':'', '3d':'', '4d':'', '5d':'', '6d':'', '7d':'', '8d':'',
-                       '1e':'', '2e':'', '3e':'', '4e':'', '5e':'', '6e':'', '7e':'', '8e':'',
-                       '1f':'', '2f':'', '3f':'', '4f':'', '5f':'', '6f':'', '7f':'', '8f':'',
-                       '1g':'bpawn', '2g':'bpawn', '3g':'bpawn', '4g':'bpawn', '5g':'bpawn', '6g':'bpawn', '7g':'bpawn', '8g':'bpawn',
-                       '1h':'brook', '2h':'bknight', '3h':'bbishop', '4h':'bking', '5h':'bqueen', '6h':'bbishop', '7h':'bknight', '8h':'brook'}
+                      '1b':'wpawn', '2b':'wpawn', '3b':'wpawn', '4b':'wpawn', '5b':'wpawn', '6b':'wpawn', '7b':'wpawn', '8b':'wpawn',
+                      '1c':'', '2c':'', '3c':'', '4c':'', '5c':'', '6c':'', '7c':'', '8c':'',
+                      '1d':'', '2d':'', '3d':'', '4d':'', '5d':'', '6d':'', '7d':'', '8d':'',
+                      '1e':'', '2e':'', '3e':'', '4e':'', '5e':'', '6e':'', '7e':'', '8e':'',
+                      '1f':'', '2f':'', '3f':'', '4f':'', '5f':'', '6f':'', '7f':'', '8f':'',
+                      '1g':'bpawn', '2g':'bpawn', '3g':'bpawn', '4g':'bpawn', '5g':'bpawn', '6g':'bpawn', '7g':'bpawn', '8g':'bpawn',
+                      '1h':'brook', '2h':'bknight', '3h':'bbishop', '4h':'bking', '5h':'bqueen', '6h':'bbishop', '7h':'bknight', '8h':'brook'}
 
     invalidPiece = {'1a':'wrook', '2a':'wknight', '3a':'wbishop', '4a':'wqueen', '5a':'wking', '6a':'wbishop', '7a':'wknight', '8a':'wrook',
-                       '1b':'epawn', '2b':'wpawn', '3b':'wpawn', '4b':'wpawn', '5b':'wpawn', '6b':'wpawn', '7b':'wpawn', '8b':'wpawn',
-                       '1c':'', '2c':'', '3c':'', '4c':'', '5c':'', '6c':'', '7c':'', '8c':'',
-                       '1d':'', '2d':'', '3d':'', '4d':'', '5d':'', '6d':'', '7d':'', '8d':'',
-                       '1e':'', '2e':'', '3e':'', '4e':'', '5e':'', '6e':'', '7e':'', '8e':'',
-                       '1f':'', '2f':'', '3f':'', '4f':'', '5f':'', '6f':'', '7f':'', '8f':'',
-                       '1g':'bpawn', '2g':'bpawn', '3g':'bpawn', '4g':'bpawn', '5g':'bpawn', '6g':'bpawn', '7g':'bpawn', '8g':'bpawn',
-                       '1h':'brook', '2h':'bknight', '3h':'bbishop', '4h':'bking', '5h':'bqueen', '6h':'bbishop', '7h':'bknight', '8h':'brook'}
+                    '1b':'epawn', '2b':'wpawn', '3b':'wpawn', '4b':'wpawn', '5b':'wpawn', '6b':'wpawn', '7b':'wpawn', '8b':'wpawn',
+                    '1c':'', '2c':'', '3c':'', '4c':'', '5c':'', '6c':'', '7c':'', '8c':'',
+                    '1d':'', '2d':'', '3d':'', '4d':'', '5d':'', '6d':'', '7d':'', '8d':'',
+                    '1e':'', '2e':'', '3e':'', '4e':'', '5e':'', '6e':'', '7e':'', '8e':'',
+                    '1f':'', '2f':'', '3f':'', '4f':'', '5f':'', '6f':'', '7f':'', '8f':'',
+                    '1g':'bpawn', '2g':'bpawn', '3g':'bpawn', '4g':'bpawn', '5g':'bpawn', '6g':'bpawn', '7g':'bpawn', '8g':'bpawn',
+                    '1h':'brook', '2h':'bknight', '3h':'bbishop', '4h':'bking', '5h':'bqueen', '6h':'bbishop', '7h':'bknight', '8h':'brook'}
 
     invalidSpace = {'1p':'wrook', '2a':'wknight', '3a':'wbishop', '4a':'wqueen', '5a':'wking', '6a':'wbishop', '7a':'wknight', '8a':'wrook',
-                       '1b':'wpawn', '2b':'wpawn', '3b':'wpawn', '4b':'wpawn', '5b':'wpawn', '6b':'wpawn', '7b':'wpawn', '8b':'wpawn',
-                       '1c':'', '2c':'', '3c':'', '4c':'', '5c':'', '6c':'', '7c':'', '8c':'',
-                       '1d':'', '2d':'', '3d':'', '4d':'', '5d':'', '6d':'', '7d':'', '8d':'',
-                       '1e':'', '2e':'', '3e':'', '4e':'', '5e':'', '6e':'', '7e':'', '8e':'',
-                       '1f':'', '2f':'', '3f':'', '4f':'', '5f':'', '6f':'', '7f':'', '8f':'',
-                       '1g':'bpawn', '2g':'bpawn', '3g':'bpawn', '4g':'bpawn', '5g':'bpawn', '6g':'bpawn', '7g':'bpawn', '8g':'bpawn',
-                       '1h':'brook', '2h':'bknight', '3h':'bbishop', '4h':'bking', '5h':'bqueen', '6h':'bbishop', '7h':'bknight', '8h':'brook'}
+                    '1b':'wpawn', '2b':'wpawn', '3b':'wpawn', '4b':'wpawn', '5b':'wpawn', '6b':'wpawn', '7b':'wpawn', '8b':'wpawn',
+                    '1c':'', '2c':'', '3c':'', '4c':'', '5c':'', '6c':'', '7c':'', '8c':'',
+                    '1d':'', '2d':'', '3d':'', '4d':'', '5d':'', '6d':'', '7d':'', '8d':'',
+                    '1e':'', '2e':'', '3e':'', '4e':'', '5e':'', '6e':'', '7e':'', '8e':'',
+                    '1f':'', '2f':'', '3f':'', '4f':'', '5f':'', '6f':'', '7f':'', '8f':'',
+                    '1g':'bpawn', '2g':'bpawn', '3g':'bpawn', '4g':'bpawn', '5g':'bpawn', '6g':'bpawn', '7g':'bpawn', '8g':'bpawn',
+                    '1h':'brook', '2h':'bknight', '3h':'bbishop', '4h':'bking', '5h':'bqueen', '6h':'bbishop', '7h':'bknight', '8h':'brook'}
 
     tooManyPieces = {'1a':'wrook', '2a':'wknight', '3a':'wbishop', '4a':'wqueen', '5a':'wking', '6a':'wbishop', '7a':'wknight', '8a':'wrook',
-                       '1b':'wpawn', '2b':'wpawn', '3b':'wpawn', '4b':'wpawn', '5b':'wpawn', '6b':'wpawn', '7b':'wpawn', '8b':'wpawn',
-                       '1c':'wrook', '2c':'', '3c':'', '4c':'', '5c':'', '6c':'', '7c':'', '8c':'',
-                       '1d':'', '2d':'', '3d':'', '4d':'', '5d':'', '6d':'', '7d':'', '8d':'',
-                       '1e':'', '2e':'', '3e':'', '4e':'', '5e':'', '6e':'', '7e':'', '8e':'',
-                       '1f':'', '2f':'', '3f':'', '4f':'', '5f':'', '6f':'', '7f':'', '8f':'',
-                       '1g':'bpawn', '2g':'bpawn', '3g':'bpawn', '4g':'bpawn', '5g':'bpawn', '6g':'bpawn', '7g':'bpawn', '8g':'bpawn',
-                       '1h':'brook', '2h':'bknight', '3h':'bbishop', '4h':'bking', '5h':'bqueen', '6h':'bbishop', '7h':'bknight', '8h':'brook'}
-    
+                     '1b':'wpawn', '2b':'wpawn', '3b':'wpawn', '4b':'wpawn', '5b':'wpawn', '6b':'wpawn', '7b':'wpawn', '8b':'wpawn',
+                     '1c':'wrook', '2c':'', '3c':'', '4c':'', '5c':'', '6c':'', '7c':'', '8c':'',
+                     '1d':'', '2d':'', '3d':'', '4d':'', '5d':'', '6d':'', '7d':'', '8d':'',
+                     '1e':'', '2e':'', '3e':'', '4e':'', '5e':'', '6e':'', '7e':'', '8e':'',
+                     '1f':'', '2f':'', '3f':'', '4f':'', '5f':'', '6f':'', '7f':'', '8f':'',
+                     '1g':'bpawn', '2g':'bpawn', '3g':'bpawn', '4g':'bpawn', '5g':'bpawn', '6g':'bpawn', '7g':'bpawn', '8g':'bpawn',
+                     '1h':'brook', '2h':'bknight', '3h':'bbishop', '4h':'bking', '5h':'bqueen', '6h':'bbishop', '7h':'bknight', '8h':'brook'}
+
     tooManyWhitePawns = {'1a':'wrook', '2a':'wknight', '3a':'wbishop', '4a':'wqueen', '5a':'wking', '6a':'wbishop', '7a':'wknight', '8a':'wrook',
-                       '1b':'wpawn', '2b':'wpawn', '3b':'wpawn', '4b':'wpawn', '5b':'wpawn', '6b':'wpawn', '7b':'wpawn', '8b':'wpawn',
-                       '1c':'wpawn', '2c':'', '3c':'', '4c':'', '5c':'', '6c':'', '7c':'', '8c':'',
-                       '1d':'', '2d':'', '3d':'', '4d':'', '5d':'', '6d':'', '7d':'', '8d':'',
-                       '1e':'', '2e':'', '3e':'', '4e':'', '5e':'', '6e':'', '7e':'', '8e':'',
-                       '1f':'', '2f':'', '3f':'', '4f':'', '5f':'', '6f':'', '7f':'', '8f':'',
-                       '1g':'bpawn', '2g':'bpawn', '3g':'bpawn', '4g':'bpawn', '5g':'bpawn', '6g':'bpawn', '7g':'bpawn', '8g':'bpawn',
-                       '1h':'brook', '2h':'bknight', '3h':'bbishop', '4h':'bking', '5h':'bqueen', '6h':'bbishop', '7h':'bknight', '8h':'brook'}
+                         '1b':'wpawn', '2b':'wpawn', '3b':'wpawn', '4b':'wpawn', '5b':'wpawn', '6b':'wpawn', '7b':'wpawn', '8b':'wpawn',
+                         '1c':'wpawn', '2c':'', '3c':'', '4c':'', '5c':'', '6c':'', '7c':'', '8c':'',
+                         '1d':'', '2d':'', '3d':'', '4d':'', '5d':'', '6d':'', '7d':'', '8d':'',
+                         '1e':'', '2e':'', '3e':'', '4e':'', '5e':'', '6e':'', '7e':'', '8e':'',
+                         '1f':'', '2f':'', '3f':'', '4f':'', '5f':'', '6f':'', '7f':'', '8f':'',
+                         '1g':'bpawn', '2g':'bpawn', '3g':'bpawn', '4g':'bpawn', '5g':'bpawn', '6g':'bpawn', '7g':'bpawn', '8g':'bpawn',
+                         '1h':'brook', '2h':'bknight', '3h':'bbishop', '4h':'bking', '5h':'bqueen', '6h':'bbishop', '7h':'bknight', '8h':'brook'}
 
     tooManyBlackPawns = {'1a':'wrook', '2a':'wknight', '3a':'wbishop', '4a':'wqueen', '5a':'wking', '6a':'wbishop', '7a':'wknight', '8a':'wrook',
-                       '1b':'wpawn', '2b':'wpawn', '3b':'wpawn', '4b':'wpawn', '5b':'wpawn', '6b':'wpawn', '7b':'wpawn', '8b':'wpawn',
-                       '1c':'', '2c':'', '3c':'', '4c':'', '5c':'', '6c':'', '7c':'', '8c':'',
-                       '1d':'', '2d':'', '3d':'', '4d':'', '5d':'', '6d':'', '7d':'', '8d':'',
-                       '1e':'', '2e':'', '3e':'', '4e':'', '5e':'', '6e':'', '7e':'', '8e':'',
-                       '1f':'bpawn', '2f':'', '3f':'', '4f':'', '5f':'', '6f':'', '7f':'', '8f':'',
-                       '1g':'bpawn', '2g':'bpawn', '3g':'bpawn', '4g':'bpawn', '5g':'bpawn', '6g':'bpawn', '7g':'bpawn', '8g':'bpawn',
-                       '1h':'brook', '2h':'bknight', '3h':'bbishop', '4h':'bking', '5h':'bqueen', '6h':'bbishop', '7h':'bknight', '8h':'brook'}
+                         '1b':'wpawn', '2b':'wpawn', '3b':'wpawn', '4b':'wpawn', '5b':'wpawn', '6b':'wpawn', '7b':'wpawn', '8b':'wpawn',
+                         '1c':'', '2c':'', '3c':'', '4c':'', '5c':'', '6c':'', '7c':'', '8c':'',
+                         '1d':'', '2d':'', '3d':'', '4d':'', '5d':'', '6d':'', '7d':'', '8d':'',
+                         '1e':'', '2e':'', '3e':'', '4e':'', '5e':'', '6e':'', '7e':'', '8e':'',
+                         '1f':'bpawn', '2f':'', '3f':'', '4f':'', '5f':'', '6f':'', '7f':'', '8f':'',
+                         '1g':'bpawn', '2g':'bpawn', '3g':'bpawn', '4g':'bpawn', '5g':'bpawn', '6g':'bpawn', '7g':'bpawn', '8g':'bpawn',
+                         '1h':'brook', '2h':'bknight', '3h':'bbishop', '4h':'bking', '5h':'bqueen', '6h':'bbishop', '7h':'bknight', '8h':'brook'}
 
     if is_valid_chess_board(validTestBoard):
         print("Valid board")
@@ -122,7 +122,7 @@ def main():
         print("Valid board")
     else:
         print("Invalid board")
-    
+
     if is_valid_chess_board(invalidSpace):
         print("Valid board")
     else:

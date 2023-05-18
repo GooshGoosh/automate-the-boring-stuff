@@ -72,7 +72,7 @@ def main():
                     # Everything else dies or stays dead:
                     nextCells[x][y] = ' '
         time.sleep(1)   # Add a 1-second pause to reduce flickering.
-        
+
 
 if __name__ == "__main__":
     try:

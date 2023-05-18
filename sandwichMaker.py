@@ -49,10 +49,10 @@ def sandwich_menu():
             while answer == 'yes':
                 if extras == '':
                     extras = pyip.inputMenu(list(extraOptions), prompt='\nWhat would you like to add?\n',
-                                             numbered=True)
+                                            numbered=True)
                 else:
                     extras = extras + ', ' + pyip.inputMenu(list(extraOptions), prompt='\nWhat would you like to add?\n',
-                                                   numbered=True)
+                                                            numbered=True)
                 answer = pyip.inputYesNo(prompt='\nWould you like to add more?\n')
 
         sandwichCount = pyip.inputNum(prompt='\nHow many sandwiches would you like to order?\n', min=1)
@@ -68,7 +68,7 @@ def sandwich_menu():
         print('\nNumber of sandwiches: {}'.format(sandwichCount))
         print('Total = ${:.2f}'.format(cost * sandwichCount))
         print('\nThank you! Come again!\n')
-    
+
 
 def main():
     sandwich_menu()

@@ -25,7 +25,7 @@ def main():
     dragonLoot = ['Gold Coin', 'Dagger', 'Gold Coin', 'Ruby']
 
     display_inventory(stuff)
-    
+
     stuff = add_to_inventory(stuff, dragonLoot)
     display_inventory(stuff)
 
