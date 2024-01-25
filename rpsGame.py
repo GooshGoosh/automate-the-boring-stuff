@@ -17,7 +17,7 @@ def rps():
             print('\nEnter your move: (r)ock (p)aper (s)cissors or (q)uit')
             playerMove = input()
             if playerMove == 'q':
-                sys.exit()      # Quit the program
+                sys.exit(0)      # Quit the program
             elif playerMove == 'r' or playerMove == 'p' or playerMove == 's':
                 break       # Break out of the player input loop.
             print('\nType one of r, p, s, or q.')

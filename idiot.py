@@ -1,12 +1,16 @@
-#!/usr/bin/env python3
+'''
+Chapter 8 Project: How to Keep an Idiot Busy for Hours
 
-# idiot.py - Keeps an idiot busy for hours.
+idiot.py - Keeps an idiot busy for hours.
+'''
 
 
 import pyinputplus as pyip
 
 
 def main():
+    """Main function to run the program.
+    """
     while True:
         prompt = '\nWant to know how to keep an idiot busy for hours?\n'
         response = pyip.inputYesNo(prompt)
@@ -19,4 +23,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

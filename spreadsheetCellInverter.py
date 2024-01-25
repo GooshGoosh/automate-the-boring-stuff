@@ -11,11 +11,11 @@ from pathlib import Path
 from openpyxl.utils import get_column_letter
 
 
-def read_spreadsheet(spreadsheetFile):
-    validExtensions = ['.xlsx', '.xlsm', '.xltx', '.xltm']  # List of valid Excel extensions.
+def read_spreadsheet(spreadsheet_file):
+    valid_ext = ['.xlsx', '.xlsm', '.xltx', '.xltm']  # List of valid Excel extensions.
 
     # Set the path of the spreadsheet and ensure it exists.
-    spreadsheet = Path(spreadsheetFile)
+    spreadsheet = Path(spreadsheet_file)
 
     if not spreadsheet.exists():
         print('\nFile path {} does not exist!\nExiting...'.format(spreadsheet))
@@ -23,7 +23,7 @@ def read_spreadsheet(spreadsheetFile):
     elif not spreadsheet.is_file():
         print('\nFile path {} does not exist!\nExiting...'.format(spreadsheet))
         sys.exit(1)
-    elif spreadsheet.suffix not in validExtensions:
+    elif spreadsheet.suffix not in valid_ext:
         print('\nFile {} is not a valid spreadsheet file!\nExiting...'.format(spreadsheet.name))
         sys.exit(1)
 
@@ -52,7 +52,7 @@ def read_spreadsheet(spreadsheetFile):
 
 
 def invert_spreadsheet(dictData, spreadsheetPath):
-    parentPath = Path(spreadsheetPath).parent   # Set the parent path.
+    parent_path = Path(spreadsheetPath).parent   # Set the parent path.
     filename = str(Path(spreadsheetPath).stem)  # Get the basename of the spreadsheet.
 
     print('Inverting spreadsheet...')
@@ -65,10 +65,10 @@ def invert_spreadsheet(dictData, spreadsheetPath):
         for i in range(1, len(v) + 1):
             sheet.cell(row=k, column=i).value = v[i - 1]
 
-    newFilename = filename + '-inverted.xlsx'   # Create a new filename.
-    wb.save(parentPath / newFilename)
+    new_filename = filename + '-inverted.xlsx'   # Create a new filename.
+    wb.save(parent_path / new_filename)
 
-    print('File saved in {} as {}'.format(parentPath, newFilename))
+    print('File saved in {} as {}'.format(parent_path, new_filename))
 
 
 def main():

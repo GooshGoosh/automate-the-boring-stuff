@@ -18,10 +18,10 @@ def update_produce(spreadsheet):
 
     # Loop through the rows and update their prices.
     print('Updating prices...')
-    for rowNum in range(2, sheet.max_row):  # Skip the first row
-        produceName = sheet.cell(row=rowNum, column=1).value
+    for row_num in range(2, sheet.max_row):  # Skip the first row
+        produceName = sheet.cell(row=row_num, column=1).value
         if produceName in priceUpdates:
-            sheet.cell(row=rowNum, column=2).value = priceUpdates[produceName]
+            sheet.cell(row=row_num, column=2).value = priceUpdates[produceName]
 
     # Create new file name to save the updated file.
     fileParent = Path(spreadsheet).parent   # Directory that the file is in.
