@@ -1,7 +1,7 @@
 '''
 Chapter 16 Project: Excel-to-CSV Converter
 
-excel_to_csv.py - Takes a directory path as a command-line argument and searches
+excel_to_csv.py - Takes a directory path as a command line argument and searches
 the given directory for any '.xlsx' (Excel) files and converts each file/sheet
 into a CSV file. Example: spreadsheet.xlsx would be converted into the files
 spreadsheet-<sheet title>.csv.

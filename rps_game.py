@@ -5,71 +5,74 @@ import sys
 
 
 def rps():
-    # These variables keep track of the number of wins, losses, and ties.
+    """Simulates games of Rock-Paper-Scissors between the user and the computer.
+    """
     wins = 0
     losses = 0
     ties = 0
 
+
     while True:     # The main game loop.
-        print('\n{} Wins, {} Losses, {} Ties'.format(wins, losses, ties))
+        print(f'\n{wins} Wins, {losses} Losses, {ties} Ties')
 
         while True:     # The player input loop.
             print('\nEnter your move: (r)ock (p)aper (s)cissors or (q)uit')
-            playerMove = input()
-            if playerMove == 'q':
-                sys.exit(0)      # Quit the program
-            elif playerMove == 'r' or playerMove == 'p' or playerMove == 's':
-                break       # Break out of the player input loop.
+            player_move = input()
+            if player_move == 'q':
+                sys.exit(0)
+            elif player_move in ('r', 'p', 's'):
+                break
             print('\nType one of r, p, s, or q.')
 
         # Display what the player chose:
-        if playerMove == 'r':
+        if player_move == 'r':
             print('\nROCK versus...')
-        elif playerMove == 'p':
+        elif player_move == 'p':
             print('\nPAPER versus...')
-        elif playerMove == 's':
+        elif player_move == 's':
             print('\nSCISSORS versus...')
 
         # Display what the computer chose:
-        randomNumber = random.randint(1, 3)
-        if randomNumber == 1:
-            computerMove = 'r'
+        random_num = random.randint(1, 3)
+        if random_num == 1:
+            computer_move = 'r'
             print('ROCK')
-        elif randomNumber == 2:
-            computerMove = 'p'
+        elif random_num == 2:
+            computer_move = 'p'
             print('PAPER')
-        elif randomNumber == 3:
-            computerMove = 's'
+        elif random_num == 3:
+            computer_move = 's'
             print('SCISSORS')
 
         # Display and record the win/loss/tie:
-        if playerMove == computerMove:
+        if player_move == computer_move:
             print('It is a tie!')
             ties = ties + 1
-        elif playerMove == 'r' and computerMove == 's':
+        elif player_move == 'r' and computer_move == 's':
             print('You win!')
             wins = wins + 1
-        elif playerMove == 'p' and computerMove == 'r':
+        elif player_move == 'p' and computer_move == 'r':
             print('You win!')
             wins = wins + 1
-        elif playerMove == 's' and computerMove == 'p':
+        elif player_move == 's' and computer_move == 'p':
             print('You win!')
             wins = wins + 1
-        elif playerMove == 'r' and computerMove == 'p':
+        elif player_move == 'r' and computer_move == 'p':
             print('You lose!')
             losses = losses + 1
-        elif playerMove == 'p' and computerMove == 's':
+        elif player_move == 'p' and computer_move == 's':
             print('You lose!')
             losses = losses + 1
-        elif playerMove == 's' and computerMove == 'r':
+        elif player_move == 's' and computer_move == 'r':
             print('You lose!')
             losses = losses + 1
 
 
 def main():
+    """Main function to run the program.
+    """
     rps()
 
 
 if __name__ == "__main__":
     main()
-

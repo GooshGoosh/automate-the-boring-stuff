@@ -2,7 +2,7 @@
 Chapter 10 Project: Backing Up a Folder into a ZIP File
 
 backup_to_zip.py - Copies an entire folder and its contents into a ZIP file with
-the current date appended. Takes a single command-line argument in the form of
+the current date appended. Takes a single command line argument in the form of
 the path of the folder that the user wants to back up.
 '''
 

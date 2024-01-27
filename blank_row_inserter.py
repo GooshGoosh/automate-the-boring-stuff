@@ -1,7 +1,7 @@
 '''
 Chapter 13 Project: Blank Row Inserter
 
-blank_row_inserter.py - Takes two integers and a filename string as command-line
+blank_row_inserter.py - Takes two integers and a filename string as command line
 arguments. The first integer (starting_row) is the starting row and the second
 integer (rows_to_add) is the number of blank rows to insert. The filename should
 be the path to a spreadsheet file.

@@ -1,7 +1,7 @@
 '''
 Chapter 10 Project: Deleting Unneeded Files
 
-find_large_files.py - Takes a path to a directory as a command-line argument then
+find_large_files.py - Takes a path to a directory as a command line argument then
 walks through the given directory and prints any files, as well as their absolute
 path, that are more than 100 MB in size.
 '''

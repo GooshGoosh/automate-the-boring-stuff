@@ -1,13 +1,23 @@
-#!/usr/bin/env python3
+'''
+Chapter 7 Project: Phone Number and Email Address Extractor
 
-# phoneAndEmail.py - Fidns phone numbers and email addresses on the clipboard.
+phone_and_email.py - Finds phone numbers and email addresses on the clipboard.
+'''
 
-import pyperclip
+
 import re
+import pyperclip
 
 
 def find_phone_and_email(text):
-    phoneRegex = re.compile(r'''(
+    """Finds phone numbers and email addresses in the text that is in the clipboard.
+    Any found phone numbers and email addresses are copied to the clipboard when the
+    program is finished.
+
+    Args:
+        text (str): The text to search through to find phone numbers and emails.
+    """
+    phone_regex = re.compile(r'''(
         (\d{3}|\(\d{3}\))?              # Area code
         (\s|-|\.)?                      # Separator
         (\d{3})                         # First 3 digits
@@ -17,7 +27,7 @@ def find_phone_and_email(text):
         )''', re.VERBOSE)
 
     # Create email regex:
-    emailRegex = re.compile(r'''(
+    email_regex = re.compile(r'''(
         [a-zA-Z0-9._%+-]+   # Username
         @                   # @ symbol
         [a-zA-Z0-9.-]+      # Domain name
@@ -26,13 +36,13 @@ def find_phone_and_email(text):
 
     # Find matches in clipboard text:
     matches = []
-    for groups in phoneRegex.findall(text):
-        phoneNum = '-'.join([groups[1], groups[3], groups[5]])
+    for groups in phone_regex.findall(text):
+        phone_num = '-'.join([groups[1], groups[3], groups[5]])
         if groups[8] != '':
-            phoneNum += ' x' + groups[8]
-        matches.append(phoneNum)
+            phone_num += ' x' + groups[8]
+        matches.append(phone_num)
 
-    for groups in emailRegex.findall(text):
+    for groups in email_regex.findall(text):
         matches.append(groups[0])
 
     # Copy Results to the clipboard:
@@ -45,12 +55,13 @@ def find_phone_and_email(text):
 
 
 def main():
+    """Main function to run the program.
+    """
     # Grab text from clipboard.
-    clipText = str(pyperclip.paste())
+    clip_text = str(pyperclip.paste())
 
-    find_phone_and_email(clipText)
+    find_phone_and_email(clip_text)
 
 
 if __name__ == "__main__":
     main()
-
